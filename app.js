@@ -1,10 +1,9 @@
 // Main application script with dynamic lesson loading
 document.addEventListener('DOMContentLoaded', function() {
     // Google Sheet ID - Replace with your actual Google Sheet ID
-    const SHEET_ID = 'your-google-sheet-id';
-    
-    // Initialize LessonService and CacheManager
-    const lessonService = new LessonService(SHEET_ID);
+   const sheetId = '1SGYebNQos3hrDgw2qXKscZuZHmLNrqi0fOXvabX60j4';
+const lessonService = new LessonService(sheetId);
+
     
     // Get current lesson index from localStorage
     let currentLessonIndex = parseInt(localStorage.getItem('currentLessonIndex')) || 0;
