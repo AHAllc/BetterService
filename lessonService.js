@@ -1,10 +1,10 @@
 // Google Sheets integration for dynamic lesson loading
 class LessonService {
-  constructor(sheetId) {
-    this.sheetId = sheetId;
-    this.baseUrl = `https://spreadsheets.google.com/feeds/list/${sheetId}/1/public/values?alt=json`;
-    this.cache = new CacheManager();
-  }
+ constructor(sheetId) {
+  this.sheetId = sheetId;
+  this.baseUrl = `https://spreadsheets.google.com/feeds/list/${sheetId}/1/public/values?alt=json`;
+  this.cache = new CacheManager();
+}
   
   // Get all completed lessons and current lesson
   async getInitialLessons(currentDay) {
