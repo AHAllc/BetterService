@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server School in Your Pocket</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-utensils"></i> Server School
+            </div>
+            <div class="progress-indicator">
+                <div class="progress-dot" data-day="1"></div>
+                <div class="progress-dot" data-day="2"></div>
+                <div class="progress-dot" data-day="3"></div>
+                <div class="progress-dot" data-day="4"></div>
+                <div class="progress-dot" data-day="5"></div>
+            </div>
+        </header>
+
+        <main>
+            <section class="lesson-header">
+                <h1 id="lesson-title">Loading lesson...</h1>
+                <div class="lesson-progress">
+                    <div class="progress-bar">
+                        <div class="progress-fill"></div>
+                    </div>
+                    <span class="progress-text">0 of 5 days completed</span>
+                </div>
+            </section>
+
+            <!-- Lesson Complete Overlay -->
+            <section id="lesson-complete-overlay" class="hidden">
+                <div class="completion-card">
+                    <div class="completion-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h2 class="completion-title">🎉 Great job!</h2>
+                    <p class="completion-message">You've completed <span id="completed-day">Day X</span>.</p>
+                    <p class="completion-submessage">Come back tomorrow for the next lesson.</p>
+                    <button id="close-completion" class="btn btn-primary">See you tomorrow!</button>
+                </div>
+            </section>
+
+            <!-- Time Remaining Overlay -->
+            <section id="time-remaining-overlay" class="hidden">
+                <div class="time-remaining-card">
+                    <div class="time-icon">
+                        <i class="fas fa-hourglass-half"></i>
+                    </div>
+                    <h2 class="time-title">Time to reflect!</h2>
+                    <p class="time-message">Your next lesson unlocks in:</p>
+                    <div class="countdown-timer">
+                        <span id="time-remaining">--:--:--</span>
+                    </div>
+                    <p class="time-submessage">Great servers take time to master each lesson before moving on.</p>
+                    <button id="close-time-remaining" class="btn btn-primary">Got it!</button>
+                </div>
+            </section>
+
+            <section class="tip-section">
+                <div class="section-header">
+                    <i class="fas fa-lightbulb"></i>
+                    <h2>Today's Hospitality Tip</h2>
+                </div>
+                <div class="tip-content" id="tip-content">
+                    <h3 id="tip-title">Loading...</h3>
+                    <div id="tip-description">
+                        <p>Loading tip content...</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quiz-section">
+                <div class="section-header">
+                    <i class="fas fa-question-circle"></i>
+                    <h2>Quiz Question</h2>
+                </div>
+                <div class="quiz-content">
+                    <p class="question" id="quiz-question">Loading question...</p>
+                    
+                    <div class="options" id="quiz-options">
+                        <!-- Options will be dynamically inserted here -->
+                    </div>
+                    
+                    <button id="check-answer" class="btn">Check Answer</button>
+                    
+                    <div id="answer-feedback" class="feedback hidden">
+                        <p class="feedback-text"></p>
+                        <p class="explanation" id="quiz-explanation"></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="quote-section">
+                <div class="section-header">
+                    <i class="fas fa-quote-left"></i>
+                    <h2>Quote of the Day</h2>
+                </div>
+                <div class="quote-content">
+                    <blockquote id="quote-text">
+                        Loading quote...
+                        <cite id="quote-author">—</cite>
+                    </blockquote>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="nav-buttons">
+                <button class="btn btn-secondary" id="prev-btn">Previous</button>
+                <button class="btn btn-primary" id="complete-btn">Mark Complete</button>
+                <button class="btn btn-secondary" id="next-btn">
+                    Next
+                    <span id="next-btn-lock" class="lock-indicator hidden">
+                        <i class="fas fa-lock"></i>
+                    </span>
+                </button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="timeUtils.js"></script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
